@@ -22,8 +22,6 @@ function loaded(){
 
 function newQuote(){
         loading()
-        // const number = Math.floor(Math.random() * apiQuotes.length)
-        // console.log (number)
         const newQuote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)] 
         authorText.textContent = (!newQuote.author) ? "- Unknown" : "- "+ newQuote.author
         quoteText.textContent = newQuote.text   
@@ -43,8 +41,7 @@ async function getQuotes(){
         apiQuotes = await response.json()
         newQuote()
 
-    } catch (error) {
-        
+    } catch (error) {       
     }
 }
 
